@@ -26,7 +26,7 @@ case "$VERSION" in
         curl -fL "https://gcc.gnu.org/pub/gcc/old-releases/egcs/egcs-1.1.2.tar.bz2" | tar xj --strip-components=1 -C "gcc-$VERSION"
         OBSTACK=gcc/obstack.h ;;
     2.95.2)
-        curl -fL "https://mirrors.kernel.org/gnu/gcc/gcc-2.95.2.tar.gz" | tar xz --strip-components=1 -C "gcc-$VERSION"
+        curl -fL --retry 3 "https://ftp.gnu.org/gnu/gcc/gcc-2.95.2.tar.gz" | tar xz --strip-components=1 -C "gcc-$VERSION"
         OBSTACK=include/obstack.h ;;
 esac
 cd "gcc-$VERSION"

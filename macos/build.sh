@@ -20,7 +20,7 @@ WORKDIR="${WORKDIR:-$(mktemp -d)}"
 case "$VERSION" in
     2.6.3) URL="https://mirrors.slackware.com/slackware/slackware-2.2.0/source/d/gcc/gcc-2.6.3.tar.gz" ;;
     2.6.0) URL="http://www.nic.funet.fi/index/gnu/funet/historical-funet-gnu-area-from-early-1990s/gcc-$VERSION.tar.gz" ;;
-    2.8.0) URL="https://mirrors.kernel.org/gnu/gcc/gcc-2.8.0.tar.gz" ;;
+    2.8.0) URL="https://ftp.gnu.org/gnu/gcc/gcc-2.8.0.tar.gz" ;;  # (mirrors.kernel.org: unreachable from GitHub's runners)
     # 2.5.7 isn't here: it is written in K&R varargs (va_alist, va_dcl) throughout, which Apple's arm64 calling
     # convention can't run; try it as an Intel build (BUILD_ARCH=x86_64) with its patches from gcc-2.5.7-psx.Dockerfile
     *) echo "unsupported version $VERSION"; exit 1 ;;
