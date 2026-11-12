@@ -1,5 +1,6 @@
 name: Compile GCC
 on:
+  workflow_dispatch:
   push:
     tags: '*'
     branches: [master]
@@ -7,6 +8,8 @@ on:
       - README.md
   pull_request:
     branches: [master]
+permissions:
+  contents: write  # publishing a tag's release
 jobs:
   build:
     runs-on: ubuntu-latest
